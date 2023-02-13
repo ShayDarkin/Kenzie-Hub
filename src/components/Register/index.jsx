@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import StyledRegister from "./Register";
 
 function Register() {
@@ -5,7 +6,9 @@ function Register() {
     <StyledRegister>
       <div className="div__nav">
         <h1>Kenzie Hub</h1>
-        <button className="back">Voltar</button>
+        <Link to={"/"}>
+          <button className="back">Voltar</button>
+        </Link>
       </div>
 
       <h2>Crie sua conta</h2>

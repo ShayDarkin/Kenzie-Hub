@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import StyledLogin from "./Login";
 
 function Login() {
@@ -30,7 +31,9 @@ function Login() {
       </form>
 
       <span>Ainda não possui uma conta?</span>
-      <button className="register">Cadastre-se</button>
+      <Link to={"/register"}>
+        <button className="register">Cadastre-se</button>
+      </Link>
     </StyledLogin>
   );
 }

@@ -32,5 +32,6 @@ body{
     height: 100vh;
     align-items: center;
 
+    font-family: 'Inter', sans-serif;
 }
 `;

@@ -22,11 +22,11 @@ const StyledRegister = styled.div`
     font-weight: 700;
     align-items: center;
 
-    gap: 149px;
+    gap: 134px;
   }
 
   h1 {
-    width: 100px;
+    width: 113px;
   }
 
   .back {
