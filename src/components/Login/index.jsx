@@ -17,7 +17,6 @@ function Login() {
       localStorage.setItem("@TOKEN", JSON.stringify(token));
       localStorage.setItem("@USERID", JSON.stringify(userId));
       toast.success("Login Efetuado com sucesso");
-
       navigate("/homepage");
     } catch (error) {
       console.log(error);

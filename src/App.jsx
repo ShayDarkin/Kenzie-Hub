@@ -7,8 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import api from "./services/api";
 
 function App() {
-  const [page, setpage] = useState(false);
-
   return (
     <div className="App">
       <AppRoutes />

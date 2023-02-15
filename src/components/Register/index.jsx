@@ -57,7 +57,7 @@ function Register() {
           placeholder="Digite sua Senha"
         />
 
-        {/*         <label htmlFor="confirmPassword">Confirmar Senha</label>
+        {/*<label htmlFor="confirmPassword">Confirmar Senha</label>
         <input
           {...register("confirmPassword")}
           id="confirmPassword"
@@ -84,9 +84,15 @@ function Register() {
 
         <label htmlFor="">Selecionar Modulo</label>
         <select {...register("course_module")} id="course_module">
-          <option value="moduloOne">Primeiro Módulo</option>
-          <option value="moduloSecond">Segundo Módulo</option>
-          <option value="moduloTrird">Terceiro Módulo</option>
+          <option value="Primeiro Modulo (Front-End Básico)">
+            Primeiro Módulo
+          </option>
+          <option value="Segundo Modulo (Front-End Intermediário)">
+            Segundo Módulo
+          </option>
+          <option value="Terceiro Modulo (Front-End Avançado)">
+            Terceiro Módulo
+          </option>
         </select>
 
         <button type="submit" className="register">

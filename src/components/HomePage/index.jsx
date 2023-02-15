@@ -1,23 +1,33 @@
+import { useEffect, useState } from "react";
 import api from "../../services/api";
 import StyledHomePage from "./HomePage";
 
 function HomePage() {
-  async function getUser() {
-    const token = localStorage.getItem("@TOKEN");
+  const [user, setUser] = useState({});
 
-    try {
-      const response = await api.get("/profile", token);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    async function getUser() {
+      const token = JSON.parse(localStorage.getItem("@TOKEN"));
+      console.log("aqui");
+      try {
+        const response = await api.get("/profile", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUser(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-  getUser();
+    getUser();
+  }, []);
+
   return (
     <StyledHomePage>
       <div>
-        <h3>Olá, 'Nome'</h3>
-        <span>Primeiro módulo ( introdução ao Front End) </span>
+        <h3>Olá, {user.name}</h3>
+        <span>{user.course_module} </span>
       </div>
     </StyledHomePage>
   );
