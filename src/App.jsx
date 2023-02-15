@@ -1,10 +1,8 @@
 import { useState } from "react";
-import ContentHomePage from "./components/ContentHomePage";
-import Header from "./components/Header";
-import HomePage from "./components/HomePage";
-import Login from "./components/Login";
-import Register from "./components/Register";
+
 import AppRoutes from "./routes";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import api from "./services/api";
 
@@ -14,6 +12,19 @@ function App() {
   return (
     <div className="App">
       <AppRoutes />
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }
