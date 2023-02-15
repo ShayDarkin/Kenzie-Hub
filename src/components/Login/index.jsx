@@ -19,7 +19,6 @@ function Login() {
       toast.success("Login Efetuado com sucesso");
       navigate("/homepage");
     } catch (error) {
-      console.log(error);
       toast.error(error.message);
     }
   }

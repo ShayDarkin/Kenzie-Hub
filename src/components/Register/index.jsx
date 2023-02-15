@@ -9,8 +9,6 @@ function Register() {
   const navigate = useNavigate();
 
   async function submit(data) {
-    console.log(data);
-
     try {
       await api.post("/users", data);
       toast.success("Cadastro Realizado com sucesso");

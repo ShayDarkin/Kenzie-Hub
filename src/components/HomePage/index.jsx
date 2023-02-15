@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import api from "../../services/api";
 import StyledHomePage from "./HomePage";
 
@@ -8,7 +9,6 @@ function HomePage() {
   useEffect(() => {
     async function getUser() {
       const token = JSON.parse(localStorage.getItem("@TOKEN"));
-      console.log("aqui");
       try {
         const response = await api.get("/profile", {
           headers: {
@@ -17,7 +17,7 @@ function HomePage() {
         });
         setUser(response.data);
       } catch (error) {
-        console.log(error);
+        toast.error(error);
       }
     }
     getUser();
