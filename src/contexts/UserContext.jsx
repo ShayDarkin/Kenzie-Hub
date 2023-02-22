@@ -7,6 +7,8 @@ export const UserContext = createContext({});
 
 function UserProvider({ children }) {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("@USERID"));
+  const token = JSON.parse(localStorage.getItem("@TOKEN"));
 
   async function submitRegister(data) {
     try {
@@ -33,8 +35,9 @@ function UserProvider({ children }) {
       toast.error("Ops, algo deu errado");
     }
   }
+
   return (
-    <UserContext.Provider value={{ submitLogin, submitRegister }}>
+    <UserContext.Provider value={{ submitLogin, submitRegister, user, token }}>
       {children}
     </UserContext.Provider>
   );
