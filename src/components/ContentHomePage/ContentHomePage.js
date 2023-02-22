@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledContentHomePage = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   padding: 12px;
@@ -18,10 +18,21 @@ const StyledContentHomePage = styled.div`
   border-bottom: 2px solid var(--color-grey-3);
   border-top: 2px solid var(--color-grey-3);
 
-  p {
+  span {
     font-weight: 700;
     font-size: 18px;
     line-height: 28px;
+  }
+
+  button {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    background-color: var(--color-grey-3);
+    border-radius: 4px;
+    border: 2px solid var(--color-grey-3);
+    color: var(--color-white);
+    transition: ease-in-out 0.2s;
   }
 `;
 

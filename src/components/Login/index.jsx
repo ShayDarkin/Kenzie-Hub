@@ -1,27 +1,14 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import api from "../../services/api";
+import { Link } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
 import StyledLogin from "./Login";
 
 function Login() {
+  const { submitLogin } = useContext(UserContext);
+
   const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
 
-  async function submitLogin(data) {
-    try {
-      const response = await api.post("/sessions", data);
-      const userId = response.data.user.id;
-      const token = response.data.token;
-
-      localStorage.setItem("@TOKEN", JSON.stringify(token));
-      localStorage.setItem("@USERID", JSON.stringify(userId));
-      toast.success("Login Efetuado com sucesso");
-      navigate("/homepage");
-    } catch (error) {
-      toast.error(error.message);
-    }
-  }
   return (
     <StyledLogin>
       <h1>Kenzie Hub</h1>

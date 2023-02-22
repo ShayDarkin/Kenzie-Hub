@@ -25,6 +25,10 @@ button{
     cursor: pointer;
 }
 
+button:hover{
+    transform: scale(1.1);
+}
+
 body{
     background-color:var(--color-grey-4);
     display: flex;
