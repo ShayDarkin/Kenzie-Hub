@@ -14,8 +14,9 @@ function AppRoutes() {
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      <Route path="/homepage" element={<ProtectedRoutes />}>
+      <Route element={<ProtectedRoutes />}>
         <Route
+          path="/homepage"
           element={
             <>
               <Header />
