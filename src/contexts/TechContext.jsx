@@ -9,7 +9,7 @@ function TechContextProvider({ children }) {
 
   async function submitTech(data) {
     try {
-      //api.post("/users/techs", data);
+      //await api.post("/users/techs", data);
       console.log(data);
       toast.success("Tecnologia cadastrada com sucesso");
     } catch (error) {
