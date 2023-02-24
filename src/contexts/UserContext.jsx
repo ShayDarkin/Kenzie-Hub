@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import api from "../services/api";
@@ -10,13 +10,17 @@ function UserProvider({ children }) {
   const user = JSON.parse(localStorage.getItem("@USERID"));
   const token = JSON.parse(localStorage.getItem("@TOKEN"));
 
+  useEffect(() => {
+    if (token && user) {
+      navigate("/homepage");
+    }
+  }, []);
   async function submitRegister(data) {
     try {
       await api.post("/users", data);
       toast.success("Cadastro Realizado com sucesso");
       navigate("/");
     } catch (error) {
-      console.log(error);
       toast.error("Revise os dados e Tente Novamente");
     }
   }

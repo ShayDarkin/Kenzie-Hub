@@ -11,10 +11,6 @@ function ProtectedRoutes() {
     }
   }, []);
 
-  /*   if (user && token) {
-    console.log("passei aqui");
-    return <Outlet />;
-  } */
   return <>{user && token ? <Outlet /> : null}</>;
 }
 

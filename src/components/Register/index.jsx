@@ -6,7 +6,6 @@ import * as yup from "yup";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 
-/* oneOf yup.ref delete */
 const schema = yup
 
   .object({
@@ -14,7 +13,7 @@ const schema = yup
     email: yup.string().required("Email é Obrigatorio"),
     password: yup
       .string()
-      .required()
+      .required("Senha é obrigatória")
       .min(6, "Senha Precisa ser Maior que 6 Caracteres")
       .matches(/(?=.*?[A-Z])/, "Tenha 1 letra maiuscula obrigatoria"),
     bio: yup.string(),
@@ -32,9 +31,7 @@ function Register() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  } = useForm({ resolver: yupResolver(schema) });
 
   return (
     <StyledRegister>
