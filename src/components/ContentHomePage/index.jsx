@@ -5,7 +5,6 @@ import StyledContentHomePage from "./ContentHomePage";
 
 function ContentHomePage() {
   const { modalOpen, setModalOpen } = useContext(TechContext);
-  console.log(modalOpen);
   return (
     <StyledContentHomePage>
       <span>Tecnologias</span>

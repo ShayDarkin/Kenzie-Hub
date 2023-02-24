@@ -15,6 +15,7 @@ function UserProvider({ children }) {
       navigate("/homepage");
     }
   }, []);
+
   async function submitRegister(data) {
     try {
       await api.post("/users", data);
