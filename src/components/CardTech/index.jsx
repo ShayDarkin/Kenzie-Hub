@@ -3,7 +3,13 @@ import { TechContext } from "../../contexts/TechContext";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
 import { StyledCard } from "./CardTech";
 function CardsTechs() {
-  const { removeTech, setModalChangeOpen, techs } = useContext(TechContext);
+  const { removeTech, setModalChangeOpen, techs, setSelect } =
+    useContext(TechContext);
+
+  function callUpdatedModal(tech) {
+    setSelect(tech);
+    setModalChangeOpen(true);
+  }
   return (
     <StyledCard>
       <ul className="container__cards">
@@ -21,7 +27,7 @@ function CardsTechs() {
                 </button>
                 <button
                   className="change__button"
-                  onClick={() => setModalChangeOpen(true)}
+                  onClick={() => callUpdatedModal(tech)}
                 >
                   <FaPencilAlt />
                 </button>

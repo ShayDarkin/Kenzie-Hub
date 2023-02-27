@@ -13,6 +13,8 @@ function TechContextProvider({ children }) {
     localStorageKey ? JSON.parse(localStorageKey) : []
   );
 
+  const [select, setSelect] = useState();
+
   useEffect(() => {
     localStorage.setItem("@TECHS", JSON.stringify(techs));
   }, [techs]);
@@ -43,11 +45,19 @@ function TechContextProvider({ children }) {
     }
   }
 
-  async function updateTech(data, id) {
+  async function updateTech(data) {
     try {
-      const response = await api.put(`/users/techs/${id}`, data, {
+      const response = await api.put(`/users/techs/${select.id}`, data, {
         headers: { Authorization: `Bearer ${token}` },
       });
+      const newTechs = techs.map((tech) => {
+        if (tech.id === select.id) {
+          tech.status = data.status;
+        }
+        return tech;
+      });
+      setTechs(newTechs);
+      setModalChangeOpen(false);
       toast.success("Tech Atualizada com sucesso");
     } catch (error) {
       toast.error("Algo deu errado na Atualização");
@@ -66,6 +76,8 @@ function TechContextProvider({ children }) {
         updateTech,
         techs,
         setTechs,
+        select,
+        setSelect,
       }}
     >
       {children}

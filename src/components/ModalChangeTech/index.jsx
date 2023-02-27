@@ -12,7 +12,7 @@ const schema = yup
   .required();
 
 function ModalChangeTech() {
-  const { setModalChangeOpen, removeTech, updateTech } =
+  const { setModalChangeOpen, removeTech, updateTech, select } =
     useContext(TechContext);
 
   const {
@@ -20,6 +20,7 @@ function ModalChangeTech() {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
+
   return (
     <StyledChangeModal>
       <div className="change--inf">
@@ -36,7 +37,13 @@ function ModalChangeTech() {
         <form onSubmit={handleSubmit(updateTech)}>
           <div className="div__techChange">
             <label htmlFor="title">Nome</label>
-            <input name="title" type="text" placeholder="Nome da Tecnologia" />
+            <input
+              name="title"
+              type="text"
+              placeholder="Nome da Tecnologia"
+              disabled
+              value={select.title}
+            />
           </div>
 
           <div className="div__techChange">
