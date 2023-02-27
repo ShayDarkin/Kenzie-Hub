@@ -5,7 +5,6 @@ const StyledHomePage = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 12px;
   gap: 10px;
   position: absolute;
   width: 320px;
@@ -19,6 +18,13 @@ const StyledHomePage = styled.div`
   border-bottom: 2px solid var(--color-grey-3);
   border-top: 2px solid var(--color-grey-3);
 
+  .inf__homepage {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+  }
+
   h3 {
     font-weight: 700;
     font-size: 18px;
@@ -29,6 +35,12 @@ const StyledHomePage = styled.div`
     font-size: var(--color-headline);
     font-weight: 600;
     color: var(--color-grey-1);
+  }
+
+  @media (max-width: 789px) {
+    .inf__homepage {
+      flex-direction: column;
+    }
   }
 `;
 

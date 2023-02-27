@@ -5,6 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 function ProtectedRoutes() {
   const { user, token } = useContext(UserContext);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (!user && !token) {
       navigate("/");

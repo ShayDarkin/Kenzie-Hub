@@ -25,7 +25,7 @@ function HomePage() {
 
   return (
     <StyledHomePage>
-      <div>
+      <div className="inf__homepage">
         <h3>Olá, {user.name}</h3>
         <span>{user.course_module} </span>
       </div>

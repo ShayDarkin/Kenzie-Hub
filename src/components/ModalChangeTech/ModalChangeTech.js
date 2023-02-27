@@ -1,23 +1,22 @@
 import styled from "styled-components";
 
-export const StyledModalAddTech = styled.div`
+export const StyledChangeModal = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
   background: rgba(18, 18, 20, 0.5);
-
-  .modal__container--inf {
+  .change--inf {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 22px;
     background: var(--color-grey-3);
     width: 369px;
-    height: 370px;
+    height: 342px;
     margin: 247px auto;
   }
 
-  .div__title--modal {
+  .modalChange__title--modal {
     width: 92%;
     display: flex;
     flex-direction: row;
@@ -28,7 +27,7 @@ export const StyledModalAddTech = styled.div`
     background: var(--color-grey-2);
   }
 
-  .close__modal {
+  .close__modalChange {
     background: none;
     border: none;
     color: var(--color-grey-1);
@@ -44,7 +43,7 @@ export const StyledModalAddTech = styled.div`
     padding: 20px 0px;
   }
 
-  .div__tech {
+  .div__techChange {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -67,21 +66,32 @@ export const StyledModalAddTech = styled.div`
     color: var(--color-grey-0);
   }
 
-  .add__tech {
-    padding: 0px 22px;
-    width: 324px;
-    height: 48px;
-    background: var(--color-primary);
-    border: 1px solid var(--color-primary);
+  .div__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .change__tech {
+    background: var(--color-primary-negative);
     border-radius: 4px;
-    font-size: 16px;
+    border: 1.2px px solid var(--color-primary-negative);
+    width: 202px;
+    height: 48px;
+  }
+
+  .delete__tech {
+    width: 98px;
+    height: 48px;
+    background: var(--color-grey-1);
+    border: 1.2px solid var(--color-grey-1);
   }
 
   @media (max-width: 789px) {
-    .div__title--modal {
+    .modalChange__title--modal {
       width: 89%;
     }
-    .modal__container--inf {
+    .change--inf {
       width: 281px;
     }
 
@@ -90,8 +100,12 @@ export const StyledModalAddTech = styled.div`
       width: 255px;
     }
 
-    .add__tech {
-      width: 252px;
+    .change__tech {
+      width: 163px;
+    }
+
+    .delete__tech {
+      width: 84px;
     }
   }
 `;
